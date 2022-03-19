@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "a88878b5-b0e8-4f07-b5f8-e61a616c7750",
+		"name": "Ticket_CLI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Token JWT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "abc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/API/get_token.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"API",
+						"get_token.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Status Ticket",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImFkbWluIiwiZXhwIjoxNjQ3NjY1NTE3fQ.CAtllu9feNyJ47zGToBPcp2dQK5Ll51f-ULoP_isTqs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/API/check-ticket.php?event_id=1&ticket_code=DTKExFppQ3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"API",
+						"check-ticket.php"
+					],
+					"query": [
+						{
+							"key": "event_id",
+							"value": "1"
+						},
+						{
+							"key": "ticket_code",
+							"value": "DTKExFppQ3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Status Ticket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6ImFkbWluIiwiZXhwIjoxNjQ3NjY3Njg5fQ.4GjTe1g348Jx6-xcIGqhfVZ60_LiCWZePDl1HvTe3BQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "event_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "ticket_code",
+							"value": "DTKExFppQ3",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/API/update-ticket.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"API",
+						"update-ticket.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
